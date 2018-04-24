@@ -1,3 +1,4 @@
+import { EsqueciSenhaPage } from './../pages/esqueci-senha/esqueci-senha';
 import { LoginPageModule } from './../pages/login/login.module';
 import { LoginPage } from './../pages/login/login';
 import { NgModule, ErrorHandler } from '@angular/core';
@@ -12,6 +13,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { CadastroPage } from '../pages/cadastro/cadastro';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ContactPage,
     HomePage,
     TabsPage,
-    LoginPage
+    LoginPage,
+    CadastroPage,
+    EsqueciSenhaPage
   ],
   imports: [
     BrowserModule,
@@ -33,7 +37,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ContactPage,
     HomePage,
     TabsPage,
-    LoginPage
+    LoginPage,
+    CadastroPage,
+    EsqueciSenhaPage
   ],
   providers: [
     StatusBar,
