@@ -12,29 +12,23 @@
             <ion-label padding style="padding-bottom: 0;">Dados Pessoais:</ion-label>
             <ion-grid>
                 <ion-row>
-                    <ion-col col-6>
+                    <ion-col col-12>
                         <ion-item>
                             <ion-label stacked>Nome</ion-label>
                             <ion-input type="text" placeholder="Nome"></ion-input>
                         </ion-item>
                     </ion-col>
-                    <ion-col col-6>
-                        <ion-item>
-                            <ion-label stacked>Sobrenome</ion-label>
-                            <ion-input type="text" placeholder="Sobrenome"></ion-input>
-                        </ion-item>
-                    </ion-col>
                 </ion-row>
 
                 <ion-row>
-                    <ion-col col-6>
+                    <ion-col col-12>
                         <ion-item>
                             <ion-label stacked>Data Nascimento</ion-label>
                             <ion-datetime placeholder="Data Nascimento" displayFormat="DD/MM/YYYY" pickerFormat="DD MM YYYY"></ion-datetime>
                         </ion-item>
                     </ion-col>
 
-                    <ion-col col-6>
+                    <ion-col col-12>
                         <ion-item>
                             <ion-label stacked>RG</ion-label>
                             <ion-input type="text" placeholder="RG"></ion-input>
@@ -45,14 +39,14 @@
 
             <ion-grid>
                 <ion-row>
-                    <ion-col col-6>
+                    <ion-col col-12>
                         <ion-item>
                             <ion-label stacked>CEP</ion-label>
                             <ion-input type="text" placeholder="CEP"></ion-input>
                         </ion-item>
                     </ion-col>
 
-                    <ion-col col-6>
+                    <ion-col col-12>
                         <ion-item>
                             <ion-label stacked>Estado</ion-label>
                             <ion-select cancelText="Cancelar" okText="OK">
@@ -99,13 +93,13 @@
                 </ion-col>
 
                 <ion-row>
-                    <ion-col col-6>
+                    <ion-col col-12>
                         <ion-item>
                             <ion-label stacked>Senha</ion-label>
                             <ion-input type="password" placeholder="Senha"></ion-input>
                         </ion-item>
                     </ion-col>
-                    <ion-col col-6>
+                    <ion-col col-12>
                         <ion-item>
                             <ion-label stacked>Confirmar Senha</ion-label>
                             <ion-input type="password" placeholder="Confirmar Senha"></ion-input>
@@ -116,10 +110,10 @@
 
             <hr>
             <ion-row padding>
-                <ion-col col-6>
+                <ion-col col-12>
                     <button ion-button color="light" block (click)="doVoltaLogin()">Cancelar</button>
                 </ion-col>
-                <ion-col col-6>
+                <ion-col col-12>
                     <button ion-button block (click)="showAlert()">Confirmar</button>
                 </ion-col>
             </ion-row>

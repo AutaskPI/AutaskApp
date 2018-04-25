@@ -14,6 +14,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { CadastroPage } from '../pages/cadastro/cadastro';
+import { ConsultacepProvider } from '../providers/consultacep/consultacep';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { CadastroPage } from '../pages/cadastro/cadastro';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ConsultacepProvider
   ]
 })
 export class AppModule {}
