@@ -1,3 +1,4 @@
+import { ConsultacepProvider } from './../../providers/consultacep/consultacep';
 import { Component, ErrorHandler } from '@angular/core';
 import { IonicPage, NavController, NavParams, IonicErrorHandler } from 'ionic-angular';
 import { TabsPage } from '../tabs/tabs';
@@ -17,6 +18,9 @@ import { AlertController } from 'ionic-angular';
 @Component({
   selector: 'page-cadastro',
   templateUrl: 'cadastro.html',
+  providers:[
+    ConsultacepProvider
+  ]
 })
 export class CadastroPage {
   teste: any;

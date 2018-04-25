@@ -9,9 +9,12 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class ConsultacepProvider {
+  private cep ="https://viacep.com.br/ws/";
 
-  constructor(public http: HttpClient) {
+  constructor(public httpClient: HttpClient) {
     console.log('Hello ConsultacepProvider Provider');
   }
-
+  getBuscaCep(cep){
+    return this.httpClient.get(this.cep + `${cep}/json/`);
+  }
 }
