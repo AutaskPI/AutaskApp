@@ -7,6 +7,7 @@ import { LoginPage } from '../login/login';
 import { AlertController } from 'ionic-angular';
 
 
+
 /**
  * Generated class for the CadastroPage page.
  *
@@ -25,6 +26,7 @@ import { AlertController } from 'ionic-angular';
 export class CadastroPage {
   teste: any;
   public mensagem:String;
+  public cep;
 
 
   constructor(public navCtrl: NavController, 
