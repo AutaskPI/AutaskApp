@@ -24,15 +24,19 @@ import { AlertController } from 'ionic-angular';
   ]
 })
 export class CadastroPage {
-  teste: any;
+  public enderecos;
   public mensagem:String;
   public cep;
-
+  public teste;
+  public objcep ={
+    cep:""
+  }
 
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
     public toastCtrl: ToastController,
-    public alertCtrl: AlertController) {
+    public alertCtrl: AlertController,
+    public ConsultacepProvider: ConsultacepProvider) {
   }
   
   doVoltaLogin(){
@@ -69,6 +73,22 @@ export class CadastroPage {
     });
     alert.present();
     this.mensagem="";
+  }
+
+  buscarCep(cadastroCom){
+    console.log(cadastroCom);
+    this.preencherCamposEnd();
+  }
+
+  preencherCamposEnd(){
+    this.ConsultacepProvider.getBuscaCep(this.objcep.cep).subscribe(
+      data=>{
+        this.enderecos = data;
+        console.log(this.enderecos);
+      },error=>{
+        console.log(error);
+      }
+    )
   }
 
   ionViewDidLoad() {

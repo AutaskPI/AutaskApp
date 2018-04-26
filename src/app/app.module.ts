@@ -1,3 +1,4 @@
+import { EsqueciSenhaPageModule } from './../pages/esqueci-senha/esqueci-senha.module';
 import { EsqueciSenhaPage } from './../pages/esqueci-senha/esqueci-senha';
 import { LoginPageModule } from './../pages/login/login.module';
 import { LoginPage } from './../pages/login/login';
@@ -14,7 +15,9 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { CadastroPage } from '../pages/cadastro/cadastro';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { ConsultacepProvider } from '../providers/consultacep/consultacep';
+import { CadastroPageModule } from '../pages/cadastro/cadastro.module';
 
 @NgModule({
   declarations: [
@@ -25,11 +28,12 @@ import { ConsultacepProvider } from '../providers/consultacep/consultacep';
     TabsPage,
     LoginPage,
     CadastroPage,
-    EsqueciSenhaPage
+    EsqueciSenhaPage,
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpClientModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
