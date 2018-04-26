@@ -5,6 +5,8 @@ import { TabsPage } from '../tabs/tabs';
 import { ToastController } from 'ionic-angular';
 import { LoginPage } from '../login/login';
 import { AlertController } from 'ionic-angular';
+import { LoadingController } from 'ionic-angular';
+
 
 
 
@@ -26,29 +28,37 @@ import { AlertController } from 'ionic-angular';
 export class CadastroPage {
   public enderecos;
   public mensagem:String;
-  public cep;
+  public loader;
   public teste;
   public objcep ={
-    cep:""
+    cep:"",
+  }
+  public retorno = {
+    estado:"",
+    cidade:"",
+    lougradouro:"",
+    complemento:"",
   }
 
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
     public toastCtrl: ToastController,
     public alertCtrl: AlertController,
-    public ConsultacepProvider: ConsultacepProvider) {
+    public ConsultacepProvider: ConsultacepProvider,
+    public loadingCtrl: LoadingController,) {
   }
-  
+  //chama a tela de Login
   doVoltaLogin(){
     this.navCtrl.push(LoginPage);
     this.mensagem ="Cancelado com Sucesso!"
     this.presentToast(this.mensagem);
     console.log(this.mensagem);
   }
-
+  //chama a tela TabsPage
   doConfirmar(){
     this.navCtrl.push(TabsPage);
   }
+  //apresenta um toast no final da página
   presentToast(mensagem) {
     let toast = this.toastCtrl.create({
       message : mensagem,
@@ -56,7 +66,18 @@ export class CadastroPage {
     });
     toast.present();
   }
-
+  //Abri o carregamento
+  abrirCarregamento() {
+    this.loader = this.loadingCtrl.create({
+      content: "Carregando...",
+    });
+    this.loader.present();
+  }
+  //fecha o carregamento
+  fecharCarregamento(){
+    this.loader.dismiss();
+  }
+  //Alerta
   showAlert() {
     let alert = this.alertCtrl.create({
       title: "Realmente Deseja se Cadastar?",
@@ -72,27 +93,36 @@ export class CadastroPage {
       }
     });
     alert.present();
-    this.mensagem="";
   }
-
-  buscarCep(cadastroCom){
-    console.log(cadastroCom);
-    this.preencherCamposEnd();
-  }
-
+  //Preenchimento as informações para o preenchimento dos campos de endereço
   preencherCamposEnd(){
+    this.abrirCarregamento();
     this.ConsultacepProvider.getBuscaCep(this.objcep.cep).subscribe(
       data=>{
         this.enderecos = data;
-        console.log(this.enderecos);
+        this.retornoBuscaCep();
+        this.fecharCarregamento();
       },error=>{
-        console.log(error);
+        this.enderecos="";
+        this.retornoBuscaCepErro()
+        this.fecharCarregamento();
+        this.presentToast("CEP inválido!");
       }
     )
   }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CadastroPage');
+  //preenchimento dos campos CEP
+  retornoBuscaCep(){
+    this.retorno.estado = this.enderecos.uf
+    this.retorno.cidade = this.enderecos.localidade
+    this.retorno.lougradouro = this.enderecos.logradouro
+    this.retorno.complemento =this.enderecos.complemento
   }
-
+  //Limpas os campos em caso de erro
+  retornoBuscaCepErro(){
+    this.objcep.cep="";
+    this.retorno.estado = ""
+    this.retorno.cidade = ""
+    this.retorno.lougradouro = ""
+    this.retorno.complemento =""
+  }
 }
