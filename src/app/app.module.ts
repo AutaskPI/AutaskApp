@@ -4,7 +4,7 @@ import { LoginPageModule } from './../pages/login/login.module';
 import { LoginPage } from './../pages/login/login';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { IonicApp, IonicModule, IonicErrorHandler, Config } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { ContactPage } from '../pages/contact/contact';
@@ -17,6 +17,8 @@ import { CadastroPage } from '../pages/cadastro/cadastro';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { ConsultacepProvider } from '../providers/consultacep/consultacep';
 import { CadastroPageModule } from '../pages/cadastro/cadastro.module';
+import { AboutPage } from '../pages/about/about';
+import { ConfigPage } from '../pages/config/config';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,7 @@ import { CadastroPageModule } from '../pages/cadastro/cadastro.module';
     LoginPage,
     CadastroPage,
     EsqueciSenhaPage,
+    ConfigPage
   ],
   imports: [
     BrowserModule,
@@ -41,7 +44,8 @@ import { CadastroPageModule } from '../pages/cadastro/cadastro.module';
     TabsPage,
     LoginPage,
     CadastroPage,
-    EsqueciSenhaPage
+    EsqueciSenhaPage,
+    ConfigPage
   ],
   providers: [
     StatusBar,

@@ -8,11 +8,13 @@ import { LoginPage } from '../pages/login/login';
 import { EsqueciSenhaPage } from '../pages/esqueci-senha/esqueci-senha';
 import { CadastroPage } from '../pages/cadastro/cadastro';
 
+
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   rootPage:any = LoginPage;
+
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
