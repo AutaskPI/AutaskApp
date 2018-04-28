@@ -7,7 +7,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler, Config } from 'ionic-angular';
 import { MyApp } from './app.component';
 
-import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 
@@ -19,17 +18,18 @@ import { ConsultacepProvider } from '../providers/consultacep/consultacep';
 import { CadastroPageModule } from '../pages/cadastro/cadastro.module';
 import { AboutPage } from '../pages/about/about';
 import { ConfigPage } from '../pages/config/config';
+import { PesquisaPage } from '../pages/pesquisa/pesquisa';
 
 @NgModule({
   declarations: [
     MyApp,
-    ContactPage,
     HomePage,
     TabsPage,
     LoginPage,
     CadastroPage,
     EsqueciSenhaPage,
-    ConfigPage
+    ConfigPage,
+    PesquisaPage
   ],
   imports: [
     BrowserModule,
@@ -39,13 +39,13 @@ import { ConfigPage } from '../pages/config/config';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    ContactPage,
     HomePage,
     TabsPage,
     LoginPage,
     CadastroPage,
     EsqueciSenhaPage,
-    ConfigPage
+    ConfigPage,
+    PesquisaPage
   ],
   providers: [
     StatusBar,
