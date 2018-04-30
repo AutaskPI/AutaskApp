@@ -1,1 +1,14 @@
-page-login {}
+page-login {
+    .item-md,
+    .item-ios {
+        background: #fff0;
+        color: #fff;
+    }
+    .enter {
+        background-color: #5c7c85;
+    }
+    .posicao {
+        position: relative;
+        top: 9%;
+    }
+}
